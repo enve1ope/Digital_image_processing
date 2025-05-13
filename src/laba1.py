@@ -5,19 +5,26 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QLa
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-class SignalApp(QMainWindow):
+# class SignalApp(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.initUI()
+
+#     def initUI(self):
+class SignalApp(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
 
     def initUI(self):
+        self.layout = QVBoxLayout(self)
         self.setWindowTitle("Моделирование сигналов")
         self.setGeometry(100, 100, 800, 600)
 
         # Основной виджет и layout
-        self.central_widget = QWidget()
-        self.setCentralWidget(self.central_widget)
-        self.layout = QVBoxLayout(self.central_widget)
+        # self.central_widget = QWidget()
+        # self.setCentralWidget(self.central_widget)
+        # self.layout = QVBoxLayout(self.central_widget)
 
         # Поля для ввода параметров сигнала
         self.form_layout = QFormLayout()

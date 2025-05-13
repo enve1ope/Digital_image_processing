@@ -22,20 +22,28 @@ class PlotWindow(QDialog):
         layout.addWidget(self.canvas)
         self.setLayout(layout)
 
-class SignalApp(QMainWindow):
+# class SignalApp(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.add_template_frequency_input = 10
+#         self.initUI()
+
+#     def initUI(self):
+class SignalApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.add_template_frequency_input = 10
         self.initUI()
+        self.add_template_frequency_input = 10
 
     def initUI(self):
+        self.layout = QVBoxLayout(self)
         self.setWindowTitle("Сегментация зашумленных сигналов")
         self.setGeometry(100, 100, 600, 600)
 
         # Основной виджет и layout
-        self.central_widget = QWidget()
-        self.setCentralWidget(self.central_widget)
-        self.layout = QVBoxLayout(self.central_widget)
+        # self.central_widget = QWidget()
+        # self.setCentralWidget(self.central_widget)
+        # self.layout = QVBoxLayout(self.central_widget)
 
         # Поля для ввода параметров
         self.form_layout = QFormLayout()
